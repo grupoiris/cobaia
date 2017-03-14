@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+         <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+        <title>COBAIA</title>
+        <meta name="description" content="cobaia, aplicaciòn para generar encuentas de pepsico">
+        <link rel="stylesheet" href="css/cobaia.css">
+        <link rel="stylesheet" href="css/index.css">
+        
+        <link rel="stylesheet" href="css/font-awesome.min.css"> 
+        <script src="js/jquery-1.12.1.min.js" type="text/javascript"></script>
+        <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+        <script src="js/main.js" type="text/javascript"></script>
+        <script type="text/javascript" src="PushNotification.js"></script>
+        <script type="text/javascript" charset="utf-8">
+            document.addEventListener("backbutton", onBackKeyDown, false);     
+            function onLoad() {
+                $('#content').load('view/login.html', function(){
+                    $("#user").val(localStorage.usuario); 
+                    $("#pass").val(localStorage.pass);  
+                    $("#tyc").attr('checked',localStorage.tyc);                    
+                    
+                    if (localStorage.login == "true"){
+                        ultimaPagina();
+                    }else{
+                        localStorage.setItem("ultPagina", "exit"); 
+                        localStorage.setItem("pagina", "login");
+                    }                                       
+                });
+            }
+            
+            function prueba (){
+               var x ="img/respuestas/Recording20160308_002.amr"; 
+            }
+            
+            function guardarId(valor){
+                if ($(valor).prop('checked')){
+                    var aux1 = $(valor).attr("id").split("-")[3];
+                    if (localStorage.ids != undefined){
+                        var ids = localStorage.ids+","+aux1;
+                        localStorage.setItem("ids", ids);
+                    }else{
+                        var ids = aux1;
+                        localStorage.setItem("ids", ids);
+                    }                    
+                }else{
+                    var aux1 = $(valor).attr("id").split("-")[3];
+                    if (localStorage.ids != undefined || localStorage.ids != "" ){
+                        var ids = localStorage.ids.split(',');
+                        var newIds = "";
+                        for(var i=0;i<ids.length;i++){
+                            if (ids[i] != aux1 )
+                                newIds += ids[i]+",";
+                        }
+                        var newIds2 = "";
+                        if(newIds != "")
+                            newIds2 = newIds.substring(0,newIds.length - 1);
+                        localStorage.removeItem("ids");
+                        localStorage.setItem("ids",newIds2);
+                    }else{
+                        localStorage.setItem("ids",aux1);
+                    }
+                }
+            }
+			
+			function validarEdad(){
+				if($("#f_nac").val() != ""){
+						var array_fecha = $("#f_nac").val().split("-");
+						var edad = 0;
+						dia = array_fecha[2];
+						mes = array_fecha[1];
+						anho = array_fecha[0];
+						hoy = new Date();
+						diaActual = hoy.getDate();
+						mesActual = hoy.getMonth() + 1;
+						yearActual = hoy.getFullYear();
+						if((mes >= mesActual)&&(dia > diaActual)){
+							edad = (yearActual  - 1 ) - anho;
+						}else{
+							edad = yearActual - anho;
+						}
+						if(edad < 12){
+							alerta("Debe tener mas de 12 años");
+						}
+						else if(edad < 18){
+							$('#datos-acudiente').slideDown();
+						}
+						else{
+							$('#datos-acudiente').slideUp();
+						}
+						//console.log(edad);
+						//console.log(yearActual +'-' + anho);
+				}		
+			}
+        </script> 
+    </head>
+    <body onload="onLoad()"> 
+        <div id="head"></div>
+        <div id="content" class="tam">
+        </div>
+        <div id="footer"></div>
+        <div id="divMenu">
+			<div id="" class="menu-flotante" onclick="mostrarMenu(1)"> </div>
+            <ul class="menu"> 
+                <div class="liMenu"><li onclick="perfil()" style="height: 100%;"><div style="display: block;height: 80%; text-align: center;"><img src="img/userM.png" style="top: 40%;position: relative;"></div><div style="text-align: center;">Perfil</div></li></div>
+                <hr>
+                <div class="liMenu"><li onclick="historial()" style="height: 100%;"><div style="display: block;height: 80%;text-align: center;"><img src="img/historyM.png" style="top: 40%;position: relative;"></div><div style="text-align: center;">Historial</div></li></div>
+                <hr>
+                <div class="liMenu"><li onclick="contactenos()" style="height: 100%;"><div style="display: block;height: 80%;text-align: center;"><img src="img/contactM.png" style="top: 40%;position: relative;"></div><div style="text-align: center;">Contáctenos</div></li></div>
+                <hr>
+                <div class="liMenu"><li onclick="cambiarContrasena()" style="height: 100%;"><div style="display: block;height: 80%;text-align: center;"><img src="img/passwordM.png" style="top: 40%;position: relative;"></div><div style="text-align: center;">Cambiar contraseña</div></li></div>
+                <hr>
+                <div class="liMenu"><li onclick="logout()" style="height: 100%;"><div style="display: block;height: 80%;text-align: center;"><img src="img/salirM.png" style="top: 40%;position: relative;"></div><div style="text-align: center;">Cerrar Sesión</div></li></div>            
+            </ul>
+            <!--div id="divMenu2" onclick="mostrarMenu()"></div-->
+        </div>    
+        <div id="error"></div>
+        <div id="carga">Loading...</div>
+        <div id="book"></div>      
+    </body> 
+    <div id="loading"></div>
+</html>

@@ -1,0 +1,54 @@
+<div id="head-user">   
+    <div id="ico-centro">
+        <div id="menu-user" class="" onclick="mostrarMenu(1)"> </div>
+        <!--img src="img/icon_cobaia.png" width="50" height="50"-->
+    </div>  
+      
+</div>
+<div id="perfil-user" class="fondo-general tam">
+    <div id="imagen-user">
+        <!--div id="puntos-user">
+            <label style="display:table;margin: 2px; width: 100%;color: #D2CFC1;">Puntos</label>
+            <span id="puntos" style="font-size: 15pt;font-weight: bold;color: #fff;">100.000</span>
+        </div-->
+        <table>
+            <tr>
+                <td>
+                    <div id="puntos-user1">
+                        <label style="display:table;margin: 2px; width: 100%;color: #D2CFC1;font-size: 11pt;font-weight: bold;">Puntos acumulados</label>
+                        <span id="puntos" style="font-size: 15pt;font-weight: bold;color: #fff;"></span>
+                    </div>
+                </td>
+                <td>
+                    <!--div >//onclick="changePerfil()"!-->
+                    <div onclick="changePerfil()">
+                        <img id="perfil" src="img/perfil.png">                       
+                    </div>
+                    <!--a id="imagenPerfil" href="" download >Prueba</a> <!--href="http://irisdev2.ml/cobaia/img/perfil/3.png"       -->
+                </td> 
+                <td>
+                   <div id="puntos-user2">
+                        <label style="display:table;margin: 2px; width: 100%;color: #D2CFC1;font-size: 11pt;font-weight: bold;">Puntos último mes</label>
+                        <span id="puntos2" style="font-size: 15pt;font-weight: bold;color: #fff;"></span>
+                    </div>     
+                </td>                
+            </tr>
+        </table>        
+    </div>
+    <div class="form-login">
+        <input id="bperfil-user"  onclick="encuestasUsuario($('#id').val())"  class="inputs button-general"  type="button"  value="Tareas Pendientes">
+        <input id="id" class="inputs" type="hidden">
+        <div onclick="modifyData(1)"><input id="nombre" class="inputs" type="text" placeholder="Nombre" disabled="false"></div>
+        <div onclick="modifyData(2)"><input id="apellido" class="inputs" type="text" placeholder="Apellido" disabled="false"></div>
+        <div ><input id="edad" class="inputs" type="text" placeholder="Edad" disabled="false"></div>
+        <div onclick="modifyData(4)"><input id="country" class="inputs" type="text" placeholder="Pais" disabled="false">  </div>
+        <div onclick="modifyData(5)"><input id="city" class="inputs" type="text"  placeholder="Ciudad" disabled="false"> </div>
+        <div onclick="modifyData(6)"><input id="dir" class="inputs" type="text"  placeholder="Dirección" disabled="false"></div>
+        <div onclick="modifyData(7)"><input id="tel" class="inputs" type="text"  placeholder="Teléfono" disabled="false"></div>
+        <div onclick="modifyData(8)"><input id="socioeconomic" class="inputs" type="text"  placeholder="Nivel socioeconomico" disabled="false">  </div>
+        <div onclick="modifyData(9)"><input id="genero" class="inputs" type="text"  placeholder="Género" disabled="false">  </div>
+        <!--div onclick="modifyData(10)"><textarea cols="3" id="marker" class="inputs" type="text"  placeholder="Consumidor de algún producto" disabled="false"> </textarea></div-->
+        
+    </div>
+    
+</div>

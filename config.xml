@@ -1,0 +1,114 @@
+<?xml version="1.19" encoding='utf-8'?>
+	<widget xmlns   = "http://www.w3.org/ns/widgets"
+		xmlns:gap   = "http://phonegap.com/ns/47"
+		id          = "com.cobaia.pepsi"
+		versionCode = "47"
+		version     = "1.19" > 
+        
+	<!-- versionCode is optional and Android only -->
+	
+	<name>Cobaia App</name>
+	<description>
+        Cobaia es un aplicativo que permite recopilar informacion por medio de encuestas, las cuales pueden estar conformadas por preguntas, video, audios e imagenes que ambientan al usuario en una situacion particular para cumplir el objetivo asociado a cada encuesta.
+	</description>
+	<author href="https://irisdev.co" email="lucia.lopez@grupoiris.co">
+			Cobaia
+	</author>    	
+        
+    <plugin name="cordova-plugin-whitelist" spec="1" />
+    <access origin="*" />
+    <allow-navigation href="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="geo:*" />
+    <platform name="android">
+        <allow-intent href="market:*" />
+    </platform>
+    <platform name="ios">
+        <allow-intent href="itms:*" />
+        <allow-intent href="itms-apps:*" />
+    </platform>
+        
+        
+	<preference name="exit-on-suspend" value="true" />
+	<preference name="keepRunning" value="true" />
+	<preference name="permissions" value="none"/>
+    <preference name="phonegap-version" value="cli-5.4.1" />
+        
+    <plugin name="com.phonegap.plugins.pushplugin" spec="2.5.0" source="pgb" />
+    <plugin name="cordova-plugin-file-transfer" />
+    <!--plugin name="cordova-plugin-network-information"  /-->
+    <gap:plugin name="cordova-plugin-network-information" source="npm" version="1.2.0" />   
+    <plugin name="org.apache.cordova.camera" />
+    <plugin name="org.apache.cordova.device" />
+    <plugin name="org.apache.cordova.file"  />
+    <plugin name="org.apache.cordova.file-transfer" />
+    <plugin name="org.apache.cordova.media-capture"  />
+
+    <!--IOS-->    
+    <!--feature name="PushPlugin">
+      <param name="ios-package" value="PushPlugin" />
+    </feature-->
+	
+	<feature name="org.apache.cordova.facebook.Connect">
+		<param name="android-package" value="org.apache.cordova.facebook.ConnectPlugin" />
+	</feature>
+	
+	<feature name="org.apache.cordova.facebook.Connect">
+		<param name="ios-package" value="FacebookConnectPlugin" />
+	</feature>
+	
+	<plugin name="com.phonegap.plugins.facebookconnect" spec="0.9.0" source="pgb">
+		<param name="APP_ID" value="164171674018083" />
+		<param name="APP_NAME" value="Cobaia" />
+	</plugin>
+	
+    <access origin="*"  launch-external="yes"/>
+	<icon src="res/icon/icon.png" /> 
+	
+	<icon src="res/icon/icon.png" gap:platform="android" gap:density="ldpi" />
+	<icon src="res/icon/icon.png" gap:platform="android" gap:density="mdpi" />
+	<icon src="res/icon/icon.png" gap:platform="android" gap:density="hdpi" />
+	<icon src="res/icon/icon.png" gap:platform="android" gap:density="xhdpi" />
+	<icon src="res/icon/icon.png" gap:platform="blackberry" />
+	<icon src="res/icon/icon.png" gap:platform="blackberry" gap:state="hover"/>
+	<icon src="res/icon/icon-57.png" gap:platform="ios" width="57" height="57" />
+	<icon src="res/icon/icon-60.png" gap:platform="ios" width="60" height="60" />
+	<icon src="res/icon/icon-72.png" gap:platform="ios" width="72" height="72" />
+	<icon src="res/icon/icon-76.png" gap:platform="ios" width="76" height="76" />
+	<icon src="res/icon/icon-120.png" gap:platform="ios" width="120" height="120" />
+	<icon src="res/icon/icon-152.png" gap:platform="ios" width="152" height="152" />
+	<icon src="res/icon/icon-60@2x.png" gap:platform="ios" width="120" height="120" />
+	<icon src="res/icon/icon-60@3x.png" gap:platform="ios" width="180" height="180" />
+	<icon src="res/icon/icon-72@2x.png" gap:platform="ios" width="144" height="144" />
+	<icon src="res/icon/icon-76@2x.png" gap:platform="ios" width="152" height="152" />
+	<icon src="res/icon/icon-120@2x.png" gap:platform="ios" width="240" height="240" />
+	<icon src="res/icon/icon.png" gap:platform="webos" />
+	<icon src="res/icon/icon.png" gap:platform="winphone" />
+	<icon src="res/icon/icon.png" gap:platform="winphone" gap:role="background" />
+	
+	<icon src="res/icon/icon-small.png" gap:platform="ios" width="29" height="29" />
+	<icon src="res/icon/icon-small@2x.png" gap:platform="ios" width="58" height="58" />
+	
+	<icon src="res/icon/icon-40.png" gap:platform="ios" width="40" height="40" />
+	<icon src="res/icon/icon-40@2x.png" gap:platform="ios" width="80" height="80" />
+	 
+	<gap:splash src="res/screen/screen.png" />
+	<gap:splash src="res/screen/screen.png" gap:platform="android" gap:density="ldpi" />
+	<gap:splash src="res/screen/screen.png" gap:platform="android" gap:density="mdpi" />
+	<gap:splash src="res/screen/screen.png" gap:platform="android" gap:density="hdpi" />
+	<gap:splash src="res/screen/screen.png" gap:platform="android" gap:density="xhdpi" />
+	<gap:splash src="res/screen/screen.png" gap:platform="blackberry" />
+	<gap:splash src="res/screen/Default-568h@2x~iphone.png" gap:platform="ios" width="320" height="480" />
+	<gap:splash src="res/screen/Default-568h@2x.png" gap:platform="ios" width="640" height="1136" />
+	<gap:splash src="res/screen/screen_320.png" gap:platform="ios"     width="320" height="480" />
+	<gap:splash src="res/screen/screen_640.png" gap:platform="ios"     width="640" height="960" />
+	<gap:splash src="res/screen/screen_640_2.png" gap:platform="ios"     width="640" height="1136" />
+	<gap:splash src="res/screen/screen_768.png" gap:platform="ios"     width="768" height="1024" />
+	<gap:splash src="res/screen/screen_1024.png" gap:platform="ios"     width="1024" height="768" />
+	<gap:splash src="res/screen/screen.png" gap:platform="winphone" />
+	
+</widget>

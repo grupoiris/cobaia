@@ -1,0 +1,44 @@
+<div id="head-user">
+    <div id="ico-centro">
+        <div id="menu-user-rosa" class="" onclick="mostrarMenu(1)"> </div>
+        <!--img src="img/icon_cobaia.png" width="50" height="50"-->
+    </div> 
+    <div id="atras-encuesta" class="atras"  onclick="irAtras('encuestas')"></div>
+</div>
+<div id="encuestas-user" class="fondo-general tam">
+    <div class="head-encuestas"> 
+        <div id="nomEnc"  class="titulo"></div>
+        <hr class="linea">
+        <p id="descripcionEnc" class="descripcion-titulo"></p>
+    </div>
+    <div class="body-encuestas">
+        <div id="encuesta" class="cuerpo otro">
+            <table style="font-size: 12pt;text-align: center;width: 95%;">                 
+                <tr>
+                    <td><span class="fecha-enc">Tiempo restante </span></td>
+                    <td><span class="fecha-enc">Puntos</span></td>    
+                </tr> 
+                <tr>
+                    <td id="conteo1" class="label-enc conteo">00:00:00</td>
+                    <td id="puntos1" class="label-enc puntos">0</td>        
+                </tr>  
+                <tr>
+                    <td id="conteo2" class="label-enc conteo">00:00:00</td>
+                    <td id="puntos2" class="label-enc puntos">0</td>                    
+                </tr>
+                <tr>
+                    <td id="conteo3" class="label-enc conteo">00:00:00</td>
+                    <td id="puntos3" class="label-enc puntos">0</td>                    
+                </tr>
+            </table>
+            <!--div id="tabla-enc">
+                <span class='fecha-enc'>Puntos por rango de hora</span></td>
+                <table id="tablaEnc">
+                </table>
+            </div-->
+        </div>      
+    </div>
+    <div class="footer-encuestas">  
+        <input id='iniciarEncuesta' class="inputs button-general"  type="button"  value="Iniciar" onclick="iniciarEncuesta(1)">
+    </div>
+</div>

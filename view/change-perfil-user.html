@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+         <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+        <title>COBAIA</title>
+        <meta name="description" content="cobaia, aplicaciòn para generar encuentas de pepsico">
+        <link rel="stylesheet" href="css/cobaia.css">
+        <link rel="stylesheet" href="css/index.css">
+        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+        
+        <script src="js/jquery-1.11.3.min.js" type="text/javascript"></script>
+        <script type="text/javascript" src="js/cordova.js"></script>
+        <script src="js/main.js" type="text/javascript"></script>
+        <script type="text/javascript" charset="utf-8"> 
+        </script> 
+    </head>
+    <ul class="menu">
+        <li onclick="perfil()"><img src="img/user.png">Perfil</li>
+        <hr>
+        <li><img src="img/history.png">Historial</li>
+        <hr>
+        <li><img src="img/condiciones.png">Términos y condiciones</li>
+        <hr>
+        <li onclick="logout()"><img src="img/salir.png">Salir</li>
+        <hr>
+    </ul>
+    <body>        
+        <div id="head">         
+        </div>
+        <div id="content" class="tam">
+            <div id="head-user">   
+        <div id="ico-centro">
+            <div id="menu-user" class="" onclick="mostrarMenu(1)"> </div>
+            <!--img src="img/icon_cobaia.png" width="50" height="50"-->
+        </div>  
+        <div id="atras-encuestas" class="atras-gris" onclick="irAtras('perfil')"></div> 
+        </div>
+        <div id="perfil-user" class="fondo-general tam">
+            <span class="titulo-beig ">FOTO DE PERFIL</span>
+            <div id="imagen-user">
+                <img id="imgPerfil" src="img/perfil.png" style="width: 150px;height: 150px;">
+                <span class="perfil-photo"  ></span>
+                <form id="files" method="post" action="" enctype="multipart/form-data" style="margin-top: 20px;" >
+                    <input onchange="archivo(this)" accept="image/*"  type="file" id="file" name="file" class="custom-file-input">
+                    <!--input type="submit" class="inputs button-general" onchange="archivo(this)" -->
+                </form>
+                <input id="volver" onclick="irAtras('perfil')" type="button" class="inputs button-general" value="Volver">
+                
+            </div>
+        </div>
+        </div>
+        <div id="footer">
+        </div>        
+        <div id="error">        
+        </div>
+    </body>
+</html>
+
